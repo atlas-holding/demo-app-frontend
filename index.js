@@ -4,10 +4,10 @@ const port = process.env.PORT || 3000;
 http.createServer((req, res) => {
   res.writeHead(200, {'Content-Type': 'application/json'});
   res.end(JSON.stringify({
-    service: '${{ values.name }}',
+    service: 'demo-app-frontend',
     status: 'running',
     platform: 'DxP'
   }));
 }).listen(port, () => {
-  console.log(`${{ values.name }} running on port ${port}`);
+  console.log(`demo-app-frontend running on port ${port}`);
 });

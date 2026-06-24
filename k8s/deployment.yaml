@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ${{ values.name }}
-  namespace: ${{ values.name }}-dev
+  name: demo-app-frontend
+  namespace: demo-app-frontend-dev
   labels:
-    app: ${{ values.name }}
+    app: demo-app-frontend
     dxp.io/managed: "true"
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ${{ values.name }}
+      app: demo-app-frontend
   template:
     metadata:
       labels:
-        app: ${{ values.name }}
-        backstage.io/kubernetes-id: ${{ values.name }}
+        app: demo-app-frontend
+        backstage.io/kubernetes-id: demo-app-frontend
     spec:
       nodeSelector:
         role: workload
@@ -25,8 +25,8 @@ spec:
         value: workload
         effect: NoSchedule
       containers:
-      - name: ${{ values.name }}
-        image: harbor.dxp/dxp/${{ values.name }}:latest
+      - name: demo-app-frontend
+        image: harbor.harbor.svc.cluster.local/dxp/demo-app-frontend:266fe8b
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
@@ -47,11 +47,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ${{ values.name }}
-  namespace: ${{ values.name }}-dev
+  name: demo-app-frontend
+  namespace: demo-app-frontend-dev
 spec:
   selector:
-    app: ${{ values.name }}
+    app: demo-app-frontend
   ports:
   - port: 80
     targetPort: 3000

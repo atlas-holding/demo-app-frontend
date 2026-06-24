@@ -1,6 +1,6 @@
-# ${{ values.name }}
+# demo-app-frontend
 
-${{ values.description }}
+demo-app-frontend service
 
 ## Stack
 - Langage : ${{ values.language }}
@@ -11,9 +11,9 @@ ${{ values.description }}
 ```bash
 # Cloner le repo
 git clone <repo-url>
-cd ${{ values.name }}
+cd demo-app-frontend
 
 # Lancer en local
-docker build -t ${{ values.name }} .
-docker run -p 8080:8080 ${{ values.name }}
+docker build -t demo-app-frontend .
+docker run -p 8080:8080 demo-app-frontend
 ```

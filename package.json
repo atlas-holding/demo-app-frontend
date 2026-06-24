@@ -1,7 +1,7 @@
 {
-  "name": "${{ values.name }}",
+  "name": "demo-app-frontend",
   "version": "1.0.0",
-  "description": "${{ values.description }}",
+  "description": "demo-app-frontend service",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
