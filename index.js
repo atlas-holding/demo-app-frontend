@@ -5,7 +5,7 @@ http.createServer((req, res) => {
   res.writeHead(200, {'Content-Type': 'application/json'});
   res.end(JSON.stringify({
     service: '${{ values.name }}',
-    status: 'ok',
+    status: 'running',
     platform: 'DxP'
   }));
 }).listen(port, () => {
