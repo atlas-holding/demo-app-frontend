@@ -26,7 +26,7 @@ spec:
         effect: NoSchedule
       containers:
       - name: demo-app-frontend
-        image: harbor.harbor.svc.cluster.local/dxp/demo-app-frontend:266fe8b
+        image: harbor.harbor.svc.cluster.local/dxp/demo-app-frontend:7251014
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
