@@ -5,7 +5,7 @@ http.createServer((req, res) => {
   res.writeHead(200, {'Content-Type': 'application/json'});
   res.end(JSON.stringify({
     service: 'demo-app-frontend',
-    status: 'running',
+    status: 'live',
     platform: 'DxP'
   }));
 }).listen(port, () => {
